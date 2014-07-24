@@ -1,0 +1,10 @@
+# robotstxt.org/
+
+User-agent: *
+
+Disallow: /timesheet
+Disallow: /clientes/
+Disallow: /ftp/
+Disallow: /libs/
+Disallow: /assets/
+sitemap: http://www.conceito-online.com.br/sitemap_2013-03-28.xml

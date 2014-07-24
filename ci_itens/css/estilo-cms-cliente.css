@@ -1,0 +1,11 @@
+#login .titulo {
+	font-size: 28px;
+	color: #980515;
+	float: left;
+	width: 170px;
+	border-right: 1px solid #980515;
+	text-align: right;
+	padding-right: 20px;
+	height: 151px;
+	margin-bottom: 20px;
+}
