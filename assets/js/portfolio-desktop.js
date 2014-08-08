@@ -112,32 +112,52 @@ $(document).ready(function(e) {
 	|	Slider de trabalhos
 	|---------------------------------------------------------------------------------
 	*/
-	jQuery('.port-slider-container', '.portfolio.slider')
-	.fitVids()
-	.flexslider({
-		animation: "slide",
-		animationLoop: true,
-		slideshowSpeed: 3000,
-		video: true,
-		// smoothHeight: true,
-		slideshow: true,
-		useCSS: false,
-		before: function(slider){
-			if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0)
-				playVideoAndPauseOthers($('.play3 iframe')[0]);
-		}
-	});
 
-	function playVideoAndPauseOthers(frame) {
-		$('iframe').each(function(i) {
-			var func = this === frame ? 'playVideo' : 'stopVideo';
-			this.contentWindow.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
-		});
-	}
+        var player = document.getElementById('play3');
+        $f(player).addEvent('ready', ready);
+        for (var i = 0, length = player.length; i < length; i++) {
+                player = player[i];
+                $f(player).addEvent('ready', ready);
+            }
+        function addEvent(element, eventName, callback) {
+            if (element.addEventListener) {
+                element.addEventListener(eventName, callback, false)
+            } else {
+                element.attachEvent(eventName, callback, false);
+            }
+        }
 
-	/* ------------------ PREV & NEXT BUTTON FOR FLEXSLIDER (YOUTUBE) ------------------ */
-	$('.flex-next, .flex-prev').click(function() {
-		playVideoAndPauseOthers($('.play3 iframe')[0]);
-	});
+        function ready(player_id) {
+            var froogaloop = $f(player);
+            froogaloop.addEvent('play', function (data) {
+                $('.flexslider').flexslider("pause");
+            });
+            froogaloop.addEvent('pause', function (data) {
+                $('.flexslider').flexslider("play");
+            });
+        }
 
+        $('.port-slider-container', '.portfolio.slider')
+            .fitVids()
+            .flexslider({
+                animation: "slide",
+                useCSS: false,
+                animationLoop: false,
+                smoothHeight: true,
+                before: function (slider) {
+                    if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0)
+                        playVideoAndPauseOthers($('#play3 iframe')[0]);
+                }
+            });
+        function playVideoAndPauseOthers(frame) {
+            $('iframe').each(function (i) {
+                var func = this === frame ? 'playVideo' : 'pauseVideo';
+                this.contentWindow.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+            });
+        }
+
+        /* ------------------ PREV & NEXT BUTTON FOR FLEXSLIDER (YOUTUBE) ------------------ */
+        $('.flex-next, .flex-prev').click(function () {
+            playVideoAndPauseOthers($('#play3 iframe')[0]);
+        });
 });

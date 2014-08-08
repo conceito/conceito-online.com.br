@@ -180,10 +180,10 @@ if($_SERVER['QUERY_STRING'] == 'phone'){
 					</div>
 
 				</div><!-- .about-job -->
-				
+
 				<!-- @ Container dos trabalhos -->
 				<div class="port-slider-container">
-					<ul class="unstyled slides ">						
+					<ul class="unstyled slides ">
 						<li> 
 							<a href="#" class="img-container"><img src="../upl/imgs/__port.jpg" /></a>						
 						</li>
@@ -197,12 +197,12 @@ if($_SERVER['QUERY_STRING'] == 'phone'){
 						</li>
 						
 						<li> 
-							<iframe class="play3" width="1280" height="720" src="http://www.youtube.com/embed/apWsYZL16d0?showinfo=0" frameborder="0" allowfullscreen ></iframe>						
+							<iframe id="play3" width="1280" height="720" src="http://www.youtube.com/embed/1j7Xs6M0vG4?enablejsapi=1" frameborder="0" allowfullscreen ></iframe>
 						</li>
 					</ul>
 				</div><!-- .port-slider-container -->
 				<!-- .slides -->
-				
+
 			</div><!-- .ct -->
 				
 			
