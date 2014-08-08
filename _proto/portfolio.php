@@ -48,13 +48,7 @@ if($_SERVER['QUERY_STRING'] == 'phone'){
 	
 	<?php endif;?>
 	
-	<script>
-	$(document).ready(function(e) {
-		
-		
-		
-	});
-	</script>
+
 </head>
 <body class="page">
 	<!--[if lt IE 7]>
