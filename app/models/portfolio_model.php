@@ -181,7 +181,10 @@ class Portfolio_model extends CI_Model{
         }
 
         $post['tags'] = $this->cms_posts->get_post_tags($post['id'], $post['modulo_id']);
-
+        // metadado ==
+        $this->load->library('cms_metadados');
+        $metas = $this->cms_metadados->getByContent($post['id'], 'meta-videos', null, true);
+        $post['youtube_link'] = '';
 //        mybug($post);
         return $post;
        
