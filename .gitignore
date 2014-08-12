@@ -8,6 +8,10 @@ app/logs/*
 upl/arqs/*
 upl/imgs/*
 nbproject/
+tests/
+app/logs/
+app/config/
+
 #app/config/myConfig.php
 #app/config/database.php
 #app/config/facebook.php

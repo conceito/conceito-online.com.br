@@ -3,35 +3,35 @@
  * API para manipular Portfolio
  */
 class Portfolio_model extends CI_Model{
-    
-    
+
+
     public $config = array();
     public $pagination = false;
     public $total = 0;
     public $perPage = 12;
 
 
-    public $boxes_sz_class = array('size-2', 'size-1','size-2', 'size-2', 
-                                    'size-2', 'size-1', 'size-1', 'size-1', 
+    public $boxes_sz_class = array('size-2', 'size-1','size-2', 'size-2',
+                                    'size-2', 'size-1', 'size-1', 'size-1',
                                     'size-1', 'size-2', 'size-2', 'size-1');
 
 
     public function __construct() {
         parent::__construct();
     }
-    
-    
+
+
     // ------------------------------------------------------------------------
     /**
      * Retorna um grupo de trabalhos.
      * Pode ser paginado.
-     * 
+     *
      * @param   array   $config
      * @return  array
      */
     public function get($config = array()) {
-        
-        
+
+
         $posts = $this->cms_posts->get(array(
             'modulo_id' => 7,
             'per_page' => $this->perPage, // 12
@@ -41,10 +41,10 @@ class Portfolio_model extends CI_Model{
             'gallery_tag' => false,
             'campos'      => 'id, nick, full_uri, titulo, resumo, dt_ini, galeria, modulo_id, tags'
         ));
-        
+
         $this->pagination = $this->cms_posts->pagination();
         $this->total = $this->cms_posts->get_total();
-        
+
         return $this->portfolioParser($posts);
     }
 
@@ -54,7 +54,7 @@ class Portfolio_model extends CI_Model{
      * @param array $params
      */
     public function getDestaques($params = false) {
-        
+
         $posts = $this->cms_posts->get(array(
             'modulo_id' => 7,
             'per_page' => 3,
@@ -64,7 +64,7 @@ class Portfolio_model extends CI_Model{
             'ordem'  => 'rand()',
             'campos'      => 'id, nick, full_uri, titulo, resumo, dt_ini, galeria, modulo_id, tags'
         ));
-        
+
         /*
          * Se não retornar nada, tenta posts sem destaque
          */
@@ -78,11 +78,11 @@ class Portfolio_model extends CI_Model{
                 'campos'      => 'id, nick, full_uri, titulo, resumo, dt_ini, galeria, modulo_id, tags'
             ));
         }
-        
+
         return $this->portfolioParser($posts);
     }
-    
-    
+
+
     // ------------------------------------------------------------------------
     /**
      * Método para parsear portfólios.
@@ -90,18 +90,18 @@ class Portfolio_model extends CI_Model{
      * @return  array
      */
     public function portfolioParser($portfolios) {
-        
+
         if(empty($portfolios)){
             return false;
         }
         else if(isset($portfolios[0]) && is_array($portfolios[0])){
             $isSingle = false;
-        } 
+        }
         else {
             $portfolios = array($portfolios);
             $isSingle = true;
         }
-        
+
         $return = array();
 
         $moduloDe3 = count($portfolios)%3;
@@ -110,27 +110,27 @@ class Portfolio_model extends CI_Model{
 
         $ci = &get_instance();
         $img_path = img($ci->config->item('upl_imgs'));
-        
+
         foreach ($portfolios as $port){
-            
+
             // coloca imagem thumbnail disponível para as requisições AJAX
             if(!empty($port['galeria'])){
                 $img = $port['galeria'][0]['nome'];
-                $port['responsive_thumb'] =  $img_path . responsive_thumb($img);                
+                $port['responsive_thumb'] =  $img_path . responsive_thumb($img);
             }
-            
+
             // ajusta nome cliente
             if(isset($port['tags'])){
                 $port['clienteNome'] = $port['tags'];
                 unset($port['tags']);
             }
-            
+
             // na unha
             $port['class'] = 'size-2';
-            $return[] = $port;            
-            
+            $return[] = $port;
+
         }
-        
+
         /*
          * Adiciona placeholders
          */
@@ -149,39 +149,39 @@ class Portfolio_model extends CI_Model{
                 );
             }
         }
-        
+
         if($isSingle){
             $return = $return[0];
         }
-        
+
         return $return;
     }
-    
+
     // ----------------------------------------------------------------------
-    
+
     /**
      * Retorna tudo sobre o trabalho.
      * @param type $nick
      */
     public function getJob($nick) {
-        
+
 //        $this->cms_conteudo->set();
         $post = $this->cms_conteudo->get_page($nick);
         if($post === false){
             return false;
         }
-        
+
         $post['galeria'] = $this->cms_conteudo->get_page_gallery();
-        
+
         $rel = $this->cms_conteudo->get_page_related();
-        
+
         if($rel){
             $key = array_rand($rel, 1);
             $post['rel'] = $rel[$key];
         }
-        
+
         $post['tags'] = $this->cms_posts->get_post_tags($post['id'], $post['modulo_id']);
-        $post
+
 //        mybug($post);
         return $post;
        

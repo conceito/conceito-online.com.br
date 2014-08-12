@@ -71,22 +71,17 @@ $(document).ready(function(e) {
 		// smoothHeight: true,
 		slideshow: true,
 		useCSS: false,
-		before: function(slider){
+		after: function(slider){
 			if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0)
 				playVideoAndPauseOthers($('.play3 iframe')[0]);
 		}
 	});
 
-	function playVideoAndPauseOthers(frame) {
-		$('iframe').each(function(i) {
-			var func = this === frame ? 'playVideo' : 'stopVideo';
-			this.contentWindow.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
-		});
-	}
 
-	/* ------------------ PREV & NEXT BUTTON FOR FLEXSLIDER (YOUTUBE) ------------------ */
-	$('.flex-next, .flex-prev').click(function() {
-		playVideoAndPauseOthers($('.play3 iframe')[0]);
-	});
-
+    function playVideoAndPauseOthers(frame) {
+        $('iframe').each(function(i) {
+            var func = this === frame ? 'playVideo' : 'pauseVideo';
+            this.contentWindow.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+        });
+    }
 });

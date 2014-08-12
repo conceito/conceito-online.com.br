@@ -69,7 +69,9 @@ class Portfolio extends Frontend_Controller{
      * @param string $job Nick do portfolio
      */
     public function show($job) {
-        
+
+
+
 //        mybug('stop');
         
         $this->setNewScript(array('jquery.flexslider.min', 'jquery.fitvids.min'));
@@ -86,13 +88,19 @@ class Portfolio extends Frontend_Controller{
       
         $view['is_mobile'] = is_mobile();
         $view['job'] = $this->portfolio->getJob($job);
-        
+
+
+
+
+
+//	    dd($view['job']);
+
         if($view['job'] === false){
             redirect('portfolio');
         }
         
         $view['bytags'] = $this->portfolio->getJobsByTags($view['job']['tags']);
-//        mybug($view['job']['tags']);
+//        mybug($view['bytags']);
         $this->pagina['resumo'] = strip_tags($view['job']['resumo']);
         $this->pagina['tags'] = '';
         $this->title = $view['job']['titulo'] . ' &gt; Portfólio';
