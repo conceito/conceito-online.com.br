@@ -181,7 +181,7 @@ class Portfolio_model extends CI_Model{
         }
         
         $post['tags'] = $this->cms_posts->get_post_tags($post['id'], $post['modulo_id']);
-        
+        $post
 //        mybug($post);
         return $post;
        
