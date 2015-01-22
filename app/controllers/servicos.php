@@ -16,6 +16,12 @@ class Servicos extends Frontend_Controller
         $view['msg_tipo'] = $this->phpsess->flashget('msg_tipo');
         $view['msg']      = $this->phpsess->flashget('msg');
 
+        if(is_mobile()){
+            $this->setNewScript(array('common-phone'));
+        } else {
+            $this->setNewScript(array('common'));
+        }
+
         $this->pagina['resumo'] = 'Serviços';
         $this->pagina['tags']   = '';
 

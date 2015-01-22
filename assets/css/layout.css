@@ -1256,6 +1256,89 @@ label.error::before{
 }
 
 
+/*
+========================================
+  services
+  ----------------------------------
+*/
+
+.services{
+    background: #444;
+    color: #fff;
+    z-index: 1;
+}
+.services h1{
+    color: #fff;
+}
+.services .hd{
+    padding-bottom: 2em;
+}
+.services .ct{
+    background: #DDD;
+}
+
+.serv-tabs {
+    background-color: #DDDDDD;
+    color: #333;
+    padding: 0;
+    margin-left: -2.1em;
+    margin-right: -2.1em;
+}
+
+.serv-tabs__item {
+}
+
+.serv-tabs__handler:link,
+.serv-tabs__handler:visited {
+    width: 85%;  
+    padding: 0 0 0 15%;  text-align: left;
+    color: #777;
+    text-decoration: none;
+    font-size: 1.6em;
+    font-weight: 700;
+}
+
+.serv-tabs__icon {
+    position: absolute;
+    top: 45%;  
+    left: 35px;
+    margin-top: -16px;
+    width: 40px;
+    height: 40px;
+    /* background-color: red; */
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+.serv-tabs__icon > svg {
+    width: 100%;
+    height: 100%;
+}
+.serv-tabs__icon > svg.consultoria {
+    width: 120%;
+   
+}
+
+.serv-tabs__handler .serv-tabs__title {
+    display: inline-block;
+    /* margin: 10px 0 0 40px; */
+    margin-left: 1.6em;  margin-top: 1.7em;
+}
+
+.serv-tabs__body  .serv-tabs__title{
+    display: none;
+}
+.serv-tabs__body {
+    padding: 2em 40px;
+}
+
+.serv-tabs__content {
+}
+
+.serv-tabs__content > p {
+}
+
+
 
 /* ==========================================================================
    *
