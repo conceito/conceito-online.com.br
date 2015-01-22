@@ -7,6 +7,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="pt-BR" class="no-js"> <!--<![endif]-->
 <head>
 
+  <!-- Conceito Comunicação Integrada | 16/10/2014 -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0,maximum-scale=10.0">
@@ -14,7 +15,6 @@
   <title><?php if(isset($title))echo $title;?></title>
   
   <?php if(isset($metatags))echo $metatags;?>
-
 
   <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="<?php echo $bs;?>favicon.ico">

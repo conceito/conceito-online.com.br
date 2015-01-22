@@ -21,7 +21,7 @@ class E_mail {
      */
     function envia($emailDes = '', $nomeDes = '', $assunto = '', $menHTML = '', $menTXT = '', $emailRem = '', $nomeRem = '', $anexo = null) {
 //        $this->ci->load->plugin('phpmailer');
-        require_once FCPATH . 'libs/mailer/class.phpmailer.php';
+        require_once FCPATH . 'libs/mailer527/class.phpmailer.php';
 
         $mail = new PHPMailer();
         // Principal settings

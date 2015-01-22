@@ -11,7 +11,10 @@ nbproject/
 tests/
 app/logs/
 app/config/
+ms
+newsletter
 
+php.ini
 #app/config/myConfig.php
 #app/config/database.php
 #app/config/facebook.php
