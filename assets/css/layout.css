@@ -1301,7 +1301,7 @@ label.error::before{
 .serv-tabs__icon {
     position: absolute;
     top: 45%;  
-    left: 35px;
+    left: 29px;
     margin-top: -16px;
     width: 40px;
     height: 40px;
@@ -1310,16 +1310,19 @@ label.error::before{
     vertical-align: text-top;
 }
 
+.serv-tabs__handler .icon-a3w-b {display:none;}
+
 .serv-tabs__icon > svg {
     width: 100%;
     height: 100%;
 }
 .serv-tabs__icon > svg.consultoria {
     width: 120%;
+    margin-left:-5px;
    
 }
 
-.serv-tabs__handler .serv-tabs__title {
+.serv-tabs__title {
     display: inline-block;
     /* margin: 10px 0 0 40px; */
     margin-left: 1.6em;  margin-top: 1.7em;
@@ -2059,6 +2062,120 @@ clear: both;
     float: left;
     float: left;
 }
+
+
+
+/*===========================================================================
+    SERVICES
+---------------------------------------------------------------------------*/
+.serv-tabs{
+    background-color: transparent;
+    height: 500px;
+}
+.serv-tabs__item {
+    display: block;
+    width: 20%;
+    vertical-align: top;
+    float: left;
+}
+.serv-tabs__body{
+    display: none;
+    background-color: #2E2E2E;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    /* float: left; */
+    /* width: 690px; */
+    z-index: 99999;
+}
+.serv-tabs__body .serv-tabs__title {
+    display: block;
+    text-align: left;
+    margin: 10px 0;
+    font-size: 2em;
+    font-weight: 700;
+}
+.serv-tabs__content p {
+    font-size: 1.6em;
+    line-height: 1.8em;
+}
+.btn-serv-tabs {
+}
+
+.serv-tabs__handler:link,
+.serv-tabs__handler:visited {
+    position: relative;
+    filter: none;
+    background: none;
+    background-color: #777777;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.38);
+    padding: 30px 0 10px;
+    display: block;
+    width: auto;
+    margin: 4px;
+    overflow: hidden;
+    transition: all .5s ease;
+}
+
+a.serv-tabs__handler:hover {}
+
+
+.opened a.serv-tabs__handler:hover,
+a.serv-tabs__handler:active,
+a.serv-tabs__handler:focus {background-color: #2E2E2E;}
+
+
+.opened .serv-tabs__handler{
+    background-color: #2E2E2E;
+    transform: translateY(5px);
+}
+
+.serv-tabs__icon {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    top: auto;
+    left: auto;
+    width: 100px;
+    height: 80px;
+    transform: translateY(-60px);
+    transition: all 1s ease;
+}
+.serv-tabs__icon svg {
+    width: 100% !important;
+}
+.serv-tabs__icon svg .st0{
+    fill: #F3F3F3;
+}
+
+.opened .serv-tabs__icon {
+    transform: translateY(0);
+}
+
+
+.serv-tabs__handler .icon-a3w-b {opacity: 0;display: block;margin: -12px auto 0;transition: all .5s ease;}
+.opened .serv-tabs__handler .icon-a3w-b {
+    opacity: 1;
+    transform: translateY(40px);
+}
+
+.serv-tabs__title {
+  color:#F3F3F3;
+  display: block;
+  margin: 10px 30px;
+  text-align: center;
+  font-size: 0.8em;
+  line-height: 1.4em;
+  min-height: 34px;
+  transition: all .5s ease;
+  overflow: hidden;
+}
+
+
+.opened .serv-tabs__handler .serv-tabs__title {
+    transform: translateY(70px);
+}
+
 
 
 

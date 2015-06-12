@@ -25,6 +25,11 @@ class Frontend_Controller extends MY_Controller {
     public $modulo = NULL;     // dados do módulo (CMS)
     public $pagina = NULL;     // dados da pagina (cms_conteudo)
 
+    /**
+     * assets version
+     * @var int
+     */
+    public $ver = 6;
 
 
     function __construct() {
@@ -271,7 +276,7 @@ class Frontend_Controller extends MY_Controller {
 
         $saida = '';
         foreach ($lista as $nomejs) {
-            $saida .= "<script type=\"text/javascript\" src=\"" . $pasta . "/" . $nomejs . ".js\"></script>\n";
+            $saida .= "<script type=\"text/javascript\" src=\"" . $pasta . "/" . $nomejs . ".js?v={$this->ver}\"></script>\n";
         }
 
         return $saida;
@@ -316,6 +321,8 @@ class Frontend_Controller extends MY_Controller {
      * @return string
      */
     function estilos($lista, $local = 'css', $media = 'screen') {
+        $ver = $this->ver;
+
         if (!is_array($lista)) {
             $lista = array($lista); // se não for, transforma em array
         }
@@ -326,7 +333,8 @@ class Frontend_Controller extends MY_Controller {
         $pasta = base_url() . $local;
         $saida = '';
         foreach ($lista as $nomes) {
-            $saida .= "<link href=\"" . $pasta . "/" . $nomes . ".css\" rel=\"stylesheet\" type=\"text/css\" media=\"$media\" />\n";
+            $saida .= "<link href=\"" . $pasta . "/" . $nomes . ".css?v={$ver}\" rel=\"stylesheet\" type=\"text/css\"
+            media=\"$media\" />\n";
         }
 
         return $saida;

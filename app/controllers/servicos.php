@@ -22,6 +22,8 @@ class Servicos extends Frontend_Controller
             $this->setNewScript(array('common'));
         }
 
+        $this->setNewScript(['jquery.scrollTo.min', 'page.servicos']);
+
         $this->pagina['resumo'] = 'Serviços';
         $this->pagina['tags']   = '';
 

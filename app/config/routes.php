@@ -57,6 +57,7 @@ $route['banner/(:any)'] = "inicio/$1";
 $route['portfolio/index/[tag:|pag:](:any)'] = "portfolio/index/$1";// paginação/tags
 $route['portfolio/getmore/(:any)'] = "portfolio/getmore/$1";// demais
 $route['portfolio/getmore'] = "portfolio/getmore";// demais
+//$route['portfolio/texts'] = "portfolio/texts";
 $route['portfolio/(:any)'] = "portfolio/show/$1";// demais
 
 // controller de notícias

@@ -7,6 +7,31 @@ class Portfolio extends Frontend_Controller{
     public function __construct() {
         parent::__construct();
     }
+
+	public function texts()
+	{
+		$posts = $this->cms_posts->get(array(
+			'modulo_id' => 7,
+			'per_page' => 99, // 12
+			'base_url' => 'portfolio/index',
+			'start_page' => false,
+			'destaque' => false,
+			'gallery_tag' => false,
+			'status' => 2,
+			'campos'      => 'id, nick, full_uri, titulo, resumo, txt,galeria, modulo_id'
+		));
+
+		foreach($posts as $p)
+
+		{
+			echo "<h2>{$p['titulo']}</h2>";
+			echo "{$p['resumo']}";
+			echo "---";
+			echo $p['txt'];
+			echo "<br>";
+		}
+
+	}
     
     public function index()
     {

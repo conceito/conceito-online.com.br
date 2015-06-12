@@ -35,6 +35,7 @@
 					<ul class="unstyled">
 						<li class="<?php echo (strstr($this->body_class,'home') !== false)?'active':'';?>"><a href="<?php echo site_url(); ?>">Início</a></li>
 						<li class="<?php echo ($this->uri_seg[1] == 'portfolio' && !isset($this->uri_seg[2]))?'active':''; ?>"><a href="<?php echo site_url('portfolio'); ?>">Portfólio</a></li>
+						<li class="<?php echo ($this->uri_seg[1] == 'servicos' && !isset($this->uri_seg[2]))?'active':''; ?>"><a href="<?php echo site_url('servicos'); ?>">Serviços</a></li>
 						<li class="<?php echo ($this->uri_seg[1] == 'contato')?'active':''; ?>"><a href="<?php echo site_url('contato'); ?>">Contato</a></li>
 						<!-- <li class="hidden-phone"><a href="<?php echo site_url('areaCliente'); ?>">Área do cliente</a></li> -->
 					</ul>

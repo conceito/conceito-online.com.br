@@ -16,7 +16,7 @@
 
 			<h1>Serviços</h1>
 
-			<p>A Conceito oferece diversos serviços nas áreas de comunicação interna e externa, que podem formar uma única estratégia de comunicação ou ser contratados isoladamente.</p>
+			<p style="width: 60%;">A Conceito oferece diversos serviços nas áreas de comunicação interna e externa, que podem formar uma única estratégia de comunicação ou ser contratados isoladamente.</p>
 
 			<p>Navegue pelos tópicos abaixo e conheça melhor cada um deles.</p>
 
@@ -31,6 +31,7 @@
 				<div class="serv-tabs__item">
 					<a class="btn-serv-tabs serv-tabs__handler" href="#">
 						<span class="serv-tabs__icon"><?php echo Svg::grafico()?></span>
+						<span class="ir icon-a3w-b"></span>
 						<span class="serv-tabs__title">Design gráfico</span>
 					</a>
 
@@ -47,6 +48,7 @@
 				<div class="serv-tabs__item">
 					<a class="btn-serv-tabs serv-tabs__handler" href="#">
 						<span class="serv-tabs__icon"><?php echo Svg::web()?></span>
+						<span class="ir icon-a3w-b"></span>
 						<span class="serv-tabs__title">Webdesign e marketing digital</span>
 					</a>
 					<div class="serv-tabs__body">
@@ -62,7 +64,9 @@
 				<div class="serv-tabs__item">
 					<a class="btn-serv-tabs serv-tabs__handler" href="#">
 						<span class="serv-tabs__icon"><?php echo Svg::empresarial()?></span>
-						<span class="serv-tabs__title">Comunicação empresarial</span> </a>
+						<span class="ir icon-a3w-b"></span>
+						<span class="serv-tabs__title">Comunicação empresarial</span>
+					</a>
 
 					<div class="serv-tabs__body">
 
@@ -77,7 +81,9 @@
 				<div class="serv-tabs__item">
 					<a class="btn-serv-tabs serv-tabs__handler" href="#">
 						<span class="serv-tabs__icon"><?php echo Svg::consultoria()?></span>
-						<span class="serv-tabs__title">Consultoria de comunicação</span> </a>
+						<span class="ir icon-a3w-b"></span>
+						<span class="serv-tabs__title">Consultoria de comunicação</span>
+					</a>
 
 					<div class="serv-tabs__body">
 
@@ -92,7 +98,9 @@
 				<div class="serv-tabs__item">
 					<a class="btn-serv-tabs serv-tabs__handler" href="#">
 						<span class="serv-tabs__icon"><?php echo Svg::publicidade()?></span>
-						<span class="serv-tabs__title">Publicidade e propaganda</span> </a>
+						<span class="ir icon-a3w-b"></span>
+						<span class="serv-tabs__title">Publicidade e propaganda</span>
+					</a>
 
 					<div class="serv-tabs__body">
 
