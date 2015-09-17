@@ -39,6 +39,13 @@
 						<li class="<?php echo ($this->uri_seg[1] == 'contato')?'active':''; ?>"><a href="<?php echo site_url('contato'); ?>">Contato</a></li>
 						<!-- <li class="hidden-phone"><a href="<?php echo site_url('areaCliente'); ?>">Área do cliente</a></li> -->
 					</ul>
+
+						<a href="http://umbrella.wiki.br" class="umbrella" title="Membros do Coletivo Umbrella">
+							<img src="<?php echo img()?>umbrella.png"
+								 alt="Coletivo
+						Umbrella"/>
+						</a>
+
 					</div><!-- .menu -->
 					
 				</div><!-- .ct -->

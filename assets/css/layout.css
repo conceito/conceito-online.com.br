@@ -1342,6 +1342,14 @@ label.error::before{
 }
 
 
+.umbrella {position: absolute;
+	right: 0;
+	top: 40%;}
+.umbrella img{width: 70px;}
+
+
+.umbrella:hover {opacity: .7    }
+
 
 /* ==========================================================================
    *
@@ -1531,6 +1539,7 @@ i.corner{
     float: left;
 }
 #footer .menu{
+	position: relative;
     margin: 0 0 0 64px;
 }
 #footer .menu li{
