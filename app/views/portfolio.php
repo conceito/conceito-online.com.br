@@ -59,7 +59,8 @@
 				// se NÃO for placeholder
 				if(strlen($port['full_uri']) > 0): 
 
-					$gal = $port['galeria'][0];
+//					$gal = $port['galeria'][0];
+					$gal = get_portfolio_thumb($port['galeria']);
 					$img = responsive_thumb($gal['nome']);
 					$path = img($this->config->item('upl_imgs'));
 				?>

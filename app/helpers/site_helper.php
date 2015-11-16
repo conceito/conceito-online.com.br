@@ -250,7 +250,27 @@ if(!function_exists('responsive_thumb')){
         }
     }
 }
-// -------------------------------------------------------------------------
+
+if(!function_exists('get_portfolio_thumb'))
+{
+	function get_portfolio_thumb($gallery)
+	{
+		if(isset($gallery[0]))
+		{
+			foreach($gallery as $i => $g)
+			{
+				if($g['tag_opt'] == 1)
+				{
+					return $g;
+				}
+			}
+			return $gallery[0];
+		}
+
+		return $gallery;
+	}
+}
+
 /**
  * Dependendo do dispositivo, o tamanho das imagems de grande resolução
  * é diferente.

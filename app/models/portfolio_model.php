@@ -42,6 +42,8 @@ class Portfolio_model extends CI_Model{
             'gallery_tag' => false,
             'campos'      => 'id, nick, full_uri, titulo, resumo, dt_ini, galeria, modulo_id, tags'
         ));
+
+//	    dd($posts[0]['galeria']);
         
         $this->pagination = $this->cms_posts->pagination();
         $this->total = $this->cms_posts->get_total();
@@ -172,8 +174,8 @@ class Portfolio_model extends CI_Model{
             return false;
         }
         
-        $post['galeria'] = $this->cms_conteudo->get_page_gallery();
-        
+        $post['galeria'] = $this->removeThumbnailImage($this->cms_conteudo->get_page_gallery());
+
         $rel = $this->cms_conteudo->get_page_related();
         
         if($rel){
@@ -193,7 +195,19 @@ class Portfolio_model extends CI_Model{
        
         
     }
-    
+
+
+	public function removeThumbnailImage($gallery)
+	{
+		if(!$gallery || empty($gallery))
+		{
+			return null;
+		}
+
+		return array_filter($gallery, function($g){
+			return $g['tag_opt'] != 1;
+		});
+	}
     
     // ---------------------------------------------------------------------
     /**

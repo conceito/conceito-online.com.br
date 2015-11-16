@@ -560,8 +560,6 @@ class Cms_posts{
         } else {
             // faz a ordenação das imagens
             return $this->ci->cms_conteudo->parse_gallery($sql->result_array(), $ids);
-            
-             
         }
     }
 
