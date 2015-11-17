@@ -40,7 +40,8 @@ class Portfolio_model extends CI_Model{
             'start_page' => (isset($config['start_page'])) ? $config['start_page'] : false,
             'destaque' => false,
             'gallery_tag' => false,
-            'campos'      => 'id, nick, full_uri, titulo, resumo, dt_ini, galeria, modulo_id, tags'
+            'campos'      => 'id, nick, full_uri, titulo, resumo, dt_ini, galeria, modulo_id, tags',
+	        'status' => 1
         ));
 
 //	    dd($posts[0]['galeria']);
