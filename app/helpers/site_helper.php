@@ -251,6 +251,27 @@ if(!function_exists('responsive_thumb')){
     }
 }
 
+
+if(!function_exists('has_thumbnail'))
+{
+	function has_thumbnail($gallery)
+	{
+		if(isset($gallery[0]))
+		{
+			foreach($gallery as $i => $g)
+			{
+				if($g['tag_opt'] == 1)
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		return false;
+	}
+}
+
 if(!function_exists('get_portfolio_thumb'))
 {
 	function get_portfolio_thumb($gallery)

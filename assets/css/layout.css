@@ -1698,10 +1698,14 @@ i.corner{
 }
 .port-boxes .size-2 img{
     max-width: none;/* remove a influência */ /* aumenta para ocupar toda altura */ /* move para centralizar */
-;
     width: 127%;
     margin: 0 0 0 -14%;
 }
+	/* for special thumbnail do not stretch size */
+	.port-boxes .size-2.has-thumbnail img{
+		width: 100%;
+		margin: 0 0 0 0;
+	}
 .port-boxes .box .hover{
     position: absolute;
     

@@ -53,7 +53,8 @@
 				foreach ($works as $key => $port):					
 			?>
 
-			<div class="box <?php echo $port['class']; ?>">
+			<div class="box <?php echo $port['class']; ?> <?php echo has_thumbnail($port['galeria']) ?
+				'has-thumbnail' : ''?>">
 				
 				<?php 
 				// se NÃO for placeholder
